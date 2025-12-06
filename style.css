@@ -1,9 +1,9 @@
+
 :root {
     --bg-color: #0a0a0a;
     --text-color: #e0e0e0;
     --accent-color: #39ff14; /* Neon Green */
     --secondary-color: #202020;
-    --font-main: 'Share Tech Mono', monospace;
 }
 
 * {
@@ -15,7 +15,7 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: var(--font-main);
+    font-family: 'JetBrains Mono';
     overflow-x: hidden;
 }
 
@@ -92,11 +92,25 @@ nav {
     align-items: center;
     justify-content: space-around;
     padding: 0 50px;
-    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    background: url('media/Siniy_fon.png') no-repeat center center/cover;
+    position: relative;
 }
 
-.hero-content {
-    max-width: 600px;
+/* Add overlay for better text readability */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content, .hero-image {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
